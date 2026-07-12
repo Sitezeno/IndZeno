@@ -2357,5 +2357,94 @@ font-size:22px;
 .page-banner h1{
 font-size:28px;
 }
+/* ===== FIX CONTENT VISIBILITY ===== */
 
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:#f5f6fa;
+}
+
+section{
+    display:block;
+    width:100%;
+    position:relative;
+}
+
+.hero-slider,
+.featured-section,
+.latest-news,
+.top-stories,
+.editor-choice,
+.live-updates,
+.premium-ad,
+.category-block,
+.video-news,
+.popular-topics,
+.market-section,
+.weather-widget,
+.crypto-section,
+.editor-picks,
+.authors-section,
+.newsletter-pro,
+.app-download,
+.social-section{
+    display:block !important;
+    width:100%;
+    margin:25px 0;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.featured-grid,
+.news-grid,
+.story-grid,
+.choice-grid,
+.category-grid,
+.tech-grid,
+.bio-grid,
+.influencer-grid,
+.video-grid,
+.market-grid,
+.crypto-grid,
+.pick-grid,
+.authors-grid{
+    display:grid;
+    gap:18px;
+}
+
+.market-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.crypto-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:99999;
+}
+
+body{
+    padding-bottom:90px;
+}
+
+/* Hide broken widgets */
+
+.ai-chat,
+.chat-widget,
+.saved-articles,
+.live-news-feed{
+    display:none !important;
+}
 }
