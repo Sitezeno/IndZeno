@@ -26,3 +26,18 @@ const overlay = document.getElementById("overlay");
 if (overlay) {
   overlay.onclick = closeMenu;
 }
+if (overlay)
+  overlay.onclick = closeMenu;
+
+// Supabase
+
+const supabaseUrl = "https://ltknnbjsymyrpnuntwyo.supabase.co/rest/v1/";
+
+const supabaseKey = "sb_publishable_r2vMX1He-CTQk8yxKcGcOw__aaTWrLd";
+
+const supabaseClient = window.supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+);
+
+console.log("Supabase Connected");
