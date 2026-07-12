@@ -2034,106 +2034,6 @@ repeat(6,1fr);
 /* =========================
    INDZENO AI CHAT
 ========================= */
-
-.ai-chat-box{
-background:#fff;
-margin:20px;
-padding:20px;
-border-radius:24px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-.ai-chat-box h2{
-font-size:32px;
-font-weight:800;
-margin-bottom:15px;
-}
-
-.ai-chat-box p{
-font-size:16px;
-color:#555;
-margin-bottom:15px;
-}
-
-.ai-chat-box input{
-width:100%;
-padding:15px;
-border:2px solid #eee;
-border-radius:14px;
-outline:none;
-margin-bottom:10px;
-font-size:15px;
-}
-
-.ai-chat-box button{
-width:100%;
-padding:15px;
-border:none;
-border-radius:14px;
-background:#d60000;
-color:white;
-font-size:16px;
-font-weight:700;
-}
-
-/* =========================
-   LIVE FEED
-========================= */
-
-.live-feed{
-padding:20px;
-}
-
-.feed-card{
-background:white;
-padding:18px;
-border-radius:20px;
-margin-bottom:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.feed-card h3{
-font-size:20px;
-font-weight:800;
-margin-bottom:8px;
-}
-
-.feed-card p{
-color:#666;
-line-height:1.7;
-}
-
-/* =========================
-   SAVED ARTICLES
-========================= */
-
-.saved-section{
-padding:20px;
-}
-
-.saved-card{
-background:white;
-padding:20px;
-border-radius:20px;
-margin-bottom:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.saved-card h3{
-font-size:20px;
-font-weight:800;
-margin-bottom:10px;
-}
-
-.saved-card p{
-color:#666;
-}
-
-/* =========================
-   SUPPORT FOOTER
-========================= */
-
-.support-section{
 background:#07142d;
 padding:35px 25px;
 color:white;
@@ -2231,4 +2131,97 @@ right:2.5%;
 }
 
 }
+/* AI Widget Professional */
+
+.ai-chat,
+#aiChat,
+.ai-assistant {
+    background: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.ai-chat h2,
+#aiChat h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 15px;
+}
+
+.ai-chat input,
+#aiChat input{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.ai-chat button,
+#aiChat button{
+    background: #d50000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Article Box */
+
+#articleModal,
+.article-modal{
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+#articleModal h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Saved Articles */
+
+.saved-articles{
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+/* Live Feed */
+
+.live-news-feed{
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+/* Floating AI Button */
+
+.ai-float-btn,
+#aiFloatingBtn{
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #d50000;
+    color: white;
+    border: none;
+    font-size: 28px;
+    box-shadow: 0 10px 30px rgba(213,0,0,.4);
+    z-index: 999;
 }
