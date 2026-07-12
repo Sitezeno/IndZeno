@@ -1,251 +1,308 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INDZENO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INDZENO - Premium News & AI Assistant</title>
+  
+  <!-- Google Fonts & Tailwind CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fff5f5',
+              100: '#ffe3e3',
+              500: '#c40000',
+              600: '#a30000',
+              700: '#820000',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f5f5f5;
-padding-bottom:80px;
-}
-
-.topbar{
-background:#c40000;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-position:sticky;
-top:0;
-z-index:999;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-}
-
-.breaking{
-background:#ff0000;
-color:white;
-padding:10px;
-font-weight:bold;
-}
-
-.trending{
-display:flex;
-overflow:auto;
-gap:10px;
-padding:12px;
-background:white;
-}
-
-.trending span{
-background:#ececec;
-padding:8px 15px;
-border-radius:20px;
-white-space:nowrap;
-}
-
-.hero{
-margin:12px;
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.hero img{
-width:100%;
-display:block;
-}
-
-.hero-content{
-padding:15px;
-}
-
-.hero-content h2{
-margin-bottom:10px;
-}
-
-.section-title{
-padding:15px;
-font-size:22px;
-font-weight:bold;
-}
-
-.news-card{
-background:white;
-margin:12px;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.news-card img{
-width:100%;
-display:block;
-}
-
-.news-card-content{
-padding:15px;
-}
-
-.news-card h3{
-margin-bottom:8px;
-}
-
-.bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:white;
-display:flex;
-justify-content:space-around;
-padding:12px 0;
-box-shadow:0 -2px 10px rgba(0,0,0,.15);
-}
-
-.bottom-nav a{
-text-decoration:none;
-color:#222;
-font-size:12px;
-font-weight:bold;
-text-align:center;
-}
-</style>
-  .sidebar{
-position:fixed;
-top:0;
-left:-250px;
-width:250px;
-height:100%;
-background:#111;
-transition:0.3s;
-z-index:9999;
-padding-top:20px;
-}
+  <style>
+    /* Custom Scrollbar for Trending Pills */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Smooth sidebar transition */
+    .sidebar-transition {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
 </head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen pb-24 transition-colors duration-300">
 
-<body>
+  <!-- ================= SIDEBAR ================= -->
+  <div id="sidebar-overlay" onclick="closeMenu()" class="fixed inset-0 bg-black/50 z-40 hidden backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-white dark:bg-slate-950 z-50 shadow-2xl sidebar-transition -translate-x-full border-r border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+    <div>
+      <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <span class="font-serif text-3xl font-extrabold text-brand-500 tracking-tight">INDZENO</span>
+        <button onclick="closeMenu()" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full text-slate-500 dark:text-slate-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      
+      <!-- Nav Links -->
+      <nav class="p-4 space-y-1">
+        <button onclick="navigateTo('home')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🏠</span> Home
+        </button>
+        <button onclick="navigateTo('category', 'AI')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🤖</span> Artificial Intelligence
+        </button>
+        <button onclick="navigateTo('category', 'Politics')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🏛️</span> Politics & Policy
+        </button>
+        <button onclick="navigateTo('category', 'Movies')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🎬</span> Entertainment & Movies
+        </button>
+        <button onclick="navigateTo('category', 'History')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🕌</span> History & Heritage
+        </button>
+        <button onclick="navigateTo('category', 'Biography')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">👤</span> Biographies
+        </button>
+        <button onclick="navigateTo('category', 'Influencers')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">⭐</span> Influencers & Stars
+        </button>
+        <button onclick="navigateTo('bookmarks')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">🔖</span> Bookmarked Stories
+        </button>
+        <button onclick="navigateTo('ai-chat')" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-950/30 text-brand-500 font-semibold transition-all group">
+          <span class="text-xl group-hover:scale-110 transition-transform">✨</span> INDZENO AI Assistant
+        </button>
+      </nav>
+    </div>
 
-<div id="sidebar" class="sidebar">
-...
-</div>
-  <span onclick="closeMenu()" class="close-btn">✖</span>
+    <!-- Sidebar Footer -->
+    <div class="p-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-medium text-slate-500 dark:text-slate-400">Night Mode</span>
+        <button onclick="toggleDarkMode()" class="w-12 h-6 rounded-full bg-slate-200 dark:bg-slate-700 p-1 flex items-center transition-all duration-300">
+          <div class="w-4 h-4 rounded-full bg-white dark:bg-slate-100 shadow-md transform transition-transform duration-300 translate-x-0 dark:translate-x-6"></div>
+        </button>
+      </div>
+      <div class="flex gap-4 text-xs text-slate-400">
+        <button onclick="navigateTo('about')" class="hover:underline">About</button>
+        <span>•</span>
+        <button onclick="navigateTo('contact')" class="hover:underline">Contact</button>
+      </div>
+    </div>
+  </aside>
 
-  <a href="index.html">🏠 Home</a>
-  <a href="news.html">📰 News</a>
-  <a href="history.html">🏛 History</a>
-  <a href="movies.html">🎬 Movies</a>
-  <a href="politics.html">🏛 Politics</a>
-  <a href="biography.html">👤 Biography</a>
-  <a href="ai.html">🤖 AI</a>
-  <a href="influencers.html">⭐ Influencers</a>
-  <a href="about.html">ℹ About</a>
-  <a href="contact.html">📞 Contact</a>
-</div>
+  <!-- ================= TOPBAR ================= -->
+  <header class="sticky top-0 bg-brand-500 text-white z-30 shadow-md transition-all">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Menu Button -->
+      <button onclick="openMenu()" class="p-2 hover:bg-brand-600 rounded-lg transition-colors" aria-label="Open Navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
 
-<script>
-function openMenu(){
- document.getElementById("sidebar").style.left="0";
-}
+      <!-- App Brand Logo -->
+      <button onclick="navigateTo('home')" class="font-serif text-2xl font-black tracking-tight hover:opacity-90 transition-opacity">
+        INDZENO
+      </button>
 
-function closeMenu(){
- document.getElementById("sidebar").style.left="-250px";
-}
-</script>
-<body>
+      <!-- Search Trigger & Night Toggle Combo -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleSearchModal()" class="p-2 hover:bg-brand-600 rounded-lg transition-colors" aria-label="Search">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+        <button onclick="toggleDarkMode()" class="p-2 hover:bg-brand-600 rounded-lg transition-colors hidden sm:block">
+          <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<header class="topbar">
-<div class="menu" onclick="openMenu()">☰</div>
-<div class="logo">INDZENO</div>
-<div>🔍</div>
-</header>
+  <!-- ================= BREAKING NEWS BANNER ================= -->
+  <div class="bg-red-600 text-white py-2 text-xs md:text-sm font-semibold shadow-inner overflow-hidden relative">
+    <div class="flex whitespace-nowrap animate-[marquee_25s_linear_infinite]">
+      <span class="mx-4 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-white inline-block animate-ping"></span> LIVE Updates Available</span>
+      <span class="mx-4">• AI Technology Innovation Summit launched globally</span>
+      <span class="mx-4">• Historical ancient sites rediscovered near Indus Valley</span>
+      <span class="mx-4">• Box office shattered: Regional cinema hits new milestones</span>
+      <span class="mx-4">• Leadership strategies defining modern political changes</span>
+    </div>
+  </div>
 
-<div class="breaking">
-<marquee>
-🔴 BREAKING NEWS • AI • Politics • Movies • Influencers • History
-</marquee>
-</div>
+  <!-- CSS Custom Keyframe for Marquee -->
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 
-<div class="trending">
-<span>AI</span>
-<span>Politics</span>
-<span>Movies</span>
-<span>History</span>
-<span>Biography</span>
-<span>Influencers</span>
-</div>
+  <!-- ================= HORIZONTAL CATEGORIES ================= -->
+  <div class="sticky top-16 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 z-20 py-3 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 flex gap-2 overflow-x-auto no-scrollbar scroll-smooth" id="category-pills">
+      <!-- Generated dynamically, but styled nicely -->
+    </div>
+  </div>
 
-<section class="hero">
-<img src="https://picsum.photos/900/500" alt="">
-<div class="hero-content">
-<h2>Top Breaking Story Of The Day</h2>
-<p>Latest updates from India and around the world.</p>
-</div>
-</section>
+  <!-- ================= MAIN DYNAMIC CONTENT CONTAINER ================= -->
+  <main class="max-w-6xl mx-auto px-4 py-6" id="main-content">
+    <!-- Dynamic page contents render here via router -->
+  </main>
 
-<div class="section-title">🔥 Top Stories</div>
+  <!-- ================= SEARCH MODAL ================= -->
+  <div id="search-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 hidden flex items-start justify-center pt-20 px-4">
+    <div class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
+      <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center gap-3">
+        <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search stories, topics, biographies, AI trends..." class="w-full bg-transparent outline-none text-lg text-slate-800 dark:text-slate-100">
+        <button onclick="toggleSearchModal()" class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div id="search-results" class="max-h-[60vh] overflow-y-auto p-4 space-y-3">
+        <!-- Live search results template -->
+        <p class="text-sm text-slate-400 text-center py-6">Type to search across INDZENO database...</p>
+      </div>
+    </div>
+  </div>
 
-<div class="news-card">
-<img src="https://picsum.photos/700/400?1">
-<div class="news-card-content">
-<h3>Breaking News</h3>
-<p>Latest national and international updates.</p>
-</div>
-</div>
+  <!-- ================= ARTICLE DETAIL VIEW MODAL ================= -->
+  <div id="article-modal" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-950 w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-slate-100 dark:border-slate-800">
+      <!-- Header -->
+      <div class="p-4 sm:p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+        <span id="article-modal-badge" class="px-3 py-1 bg-brand-100 text-brand-600 text-xs font-bold rounded-full uppercase tracking-wider">Category</span>
+        <div class="flex items-center gap-2">
+          <!-- Text to Speech Button -->
+          <button id="tts-btn" onclick="toggleReadAloud()" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300" title="Read Aloud">
+            🔊 Speak
+          </button>
+          <button id="article-modal-bookmark-btn" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300">
+            🔖 Bookmark
+          </button>
+          <button onclick="closeArticleModal()" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Scrollable content -->
+      <div class="overflow-y-auto p-6 sm:p-8 space-y-6 flex-1">
+        <h2 id="article-modal-title" class="font-serif text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">Article Title</h2>
+        <div class="flex items-center gap-3 text-sm text-slate-500">
+          <span id="article-modal-date">July 12, 2026</span>
+          <span>•</span>
+          <span id="article-modal-author">By INDZENO Desk</span>
+        </div>
+        <img id="article-modal-img" src="" alt="News Image" class="w-full h-64 sm:h-96 object-cover rounded-2xl shadow-md">
+        
+        <!-- Interactive AI Summary Panel -->
+        <div class="bg-red-50/50 dark:bg-red-950/20 border border-brand-100 dark:border-brand-900/40 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-brand-600 dark:text-red-400 flex items-center gap-2">
+              <span class="text-lg">✨</span> INDZENO AI Smart Summary
+            </h4>
+            <button id="ai-sum-btn" onclick="generateAISummary()" class="text-xs bg-brand-500 hover:bg-brand-600 text-white font-semibold py-1.5 px-4 rounded-xl transition-all shadow-sm">
+              Generate Summary
+            </button>
+          </div>
+          <p id="ai-summary-text" class="text-sm text-slate-600 dark:text-slate-300 italic">Get deep contextual insights with our artificial intelligence model instantly.</p>
+        </div>
 
-<div class="news-card">
-<img src="https://picsum.photos/700/400?2">
-<div class="news-card-content">
-<h3>AI Revolution</h3>
-<p>Artificial Intelligence latest developments.</p>
-</div>
-</div>
+        <div id="article-modal-body" class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed space-y-4 font-normal">
+          <!-- Text Paragraphs Go Here -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="news-card">
-<img src="https://picsum.photos/700/400?3">
-<div class="news-card-content">
-<h3>Politics Today</h3>
-<p>Political analysis and current affairs coverage.</p>
-</div>
-</div>
+  <!-- ================= NOTIFICATION TOAST ================= -->
+  <div id="toast" class="fixed bottom-24 right-4 z-50 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all transform translate-y-20 opacity-0 pointer-events-none">
+    <span id="toast-icon">💡</span>
+    <span id="toast-message" class="text-sm font-semibold">Action completed successfully</span>
+  </div>
 
-<div class="news-card">
-<img src="https://picsum.photos/700/400?4">
-<div class="news-card-content">
-<h3>Influencers</h3>
-<p>Top YouTubers and content creators updates.</p>
-</div>
-</div>
+  <!-- ================= BOTTOM NAVIGATION ================= -->
+  <nav class="fixed bottom-0 left-0 w-full bg-white/90 dark:bg-slate-950/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 z-30 shadow-2xl">
+    <div class="max-w-md mx-auto flex justify-around py-3">
+      <button onclick="navigateTo('home')" class="nav-tab flex flex-col items-center gap-1 text-brand-500 font-bold transition-all" data-page="home">
+        <span class="text-xl">🏠</span>
+        <span class="text-[10px] tracking-wide uppercase">Home</span>
+      </button>
+      <button onclick="navigateTo('category', 'AI')" class="nav-tab flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 font-bold hover:text-brand-500 transition-all" data-page="AI">
+        <span class="text-xl">🤖</span>
+        <span class="text-[10px] tracking-wide uppercase">AI</span>
+      </button>
+      <button onclick="navigateTo('category', 'Politics')" class="nav-tab flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 font-bold hover:text-brand-500 transition-all" data-page="Politics">
+        <span class="text-xl">🏛️</span>
+        <span class="text-[10px] tracking-wide uppercase">Politics</span>
+      </button>
+      <button onclick="navigateTo('ai-chat')" class="nav-tab flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 font-bold hover:text-brand-500 transition-all" data-page="ai-chat">
+        <span class="text-xl">✨</span>
+        <span class="text-[10px] tracking-wide uppercase">AI Bot</span>
+      </button>
+      <button onclick="navigateTo('bookmarks')" class="nav-tab flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 font-bold hover:text-brand-500 transition-all" data-page="bookmarks">
+        <span class="text-xl">🔖</span>
+        <span class="text-[10px] tracking-wide uppercase">Saved</span>
+      </button>
+    </div>
+  </nav>
 
-<div class="bottom-nav">
-<a href="index.html">🏠<br>Home</a>
-<a href="news.html">📰<br>News</a>
-<a href="ai.html">🤖<br>AI</a>
-<a href="influencers.html">⭐<br>Stars</a>
-<a href="contact.html">☰<br>Menu</a>
-</div>
-<script>
-function openMenu() {
-  document.getElementById("sidebar").style.left = "0";
-}
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // --- GEMINI API Setup ---
+    const apiKey = ""; // Runtime provides actual key
 
-function closeMenu() {
-  document.getElementById("sidebar").style.left = "-250px";
-}
-</script>
-</body>
-</html>
+    // Database of beautiful structured News Articles
+    const articles = [
+      {
+        id: "art-1",
+        title: "India Elevates AI Infrastructure with Massive Supercomputing Centers",
+        description: "National initiative aims to distribute localized compute power across tier-2 and tier-3 cities for sustainable AI growth.",
+        content: "India is rapidly building supercomputing infrastructure designed to empower localized startups and educational institutions. With deep initiatives across cloud data centers, public cloud sovereign setups, and dedicated native AI frameworks, the nation ensures technology targets specific regional problems. AI clusters are planned for agricultural enhancement, natural language translations of indigenous dialects, and deep tech medical diagnostic systems, creating millions of skilled opportunities.",
+        category: "AI",
+        image: "https://picsum.photos/900/600?random=11",
+        date: "July 12, 2026",
+        author: "Alok Sharma"
+      },
+      {
+        id: "art-2",
+        title: "New Sovereign AI Models Challenge Silicon Valley Monopoly",
+        description: "How localized datasets and multilingual fine-tuning are making native LLMs outperform major tech giants on native context.",
+        content: "As digital sovereignty gains massive attention, researchers from India have launched modular LLMs that handle more than 22 scheduled national languages natively. Unlike standard western models trained heavily on English-centric data, these custom networks capture delicate local idioms, cultural narratives, and socio-economic contexts accurately. They are lightweight, require a fraction of standard computing resources, and provide specialized micro-models for enterprise and agricultural use-cases.",
+        category: "AI",
+        image: "https://picsum.photos/900/600?random=12",
+        date: "July 10, 2026",
+        author: "Nisha Patel"
+      },
+      {
+        id: "art-3",
+        title: "Parliament Passes Landmark Renewable Grid Decentralization Bill",
+        description: "New legislation introduces massive clean-energy subsidies and dynamic smart micro-grids across rural districts.",
+        content: "The latest political consensus brings a monumental shift in national infrastructure as the Clean Energy Micro-grid Bill sails through both houses. This historic legislation creates frameworks where village community panchayats can produce, store, and trade solar and wind energy directly with state distribution agencies. Economic experts label this policy as a turning point that reduces grid transmission loss, provides complete energy reliability to small industries, and speeds up international climate obligations.",
+        category: "Politics",
+        image: "https://picsum.photos/900/600?random=13",
+        date: "July 11, 2026",
+        author: "Rajesh K. Mehta"
+      },
+      {
+        id: "art-4",
+        title: "The Geopolitical Dynamics of Chip Manufacturing in Indo-Pacific",
+        description: "Analyzing the global alliances securing silicon supply chains as tech corridors expand beyond East Asia.",
+        content: "Governments around the globe are finalizing high-tier technology transfer deals to secure strategic semiconductor sovereignty
