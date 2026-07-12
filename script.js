@@ -1,18 +1,31 @@
-function openMenu(){
-document.getElementById("sidebar").classList.add("active");
-document.getElementById("overlay").classList.add("active");
+function openMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+
+  if (sidebar) sidebar.classList.add("active");
+  if (overlay) overlay.classList.add("active");
 }
 
-function closeMenu(){
-document.getElementById("sidebar").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
+function closeMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+
+  if (sidebar) sidebar.classList.remove("active");
+  if (overlay) overlay.classList.remove("active");
 }
 
-function openSearch(){
-document.getElementById("searchBox").classList.toggle("active");
+function openSearch() {
+  const searchBox = document.getElementById("searchBox");
+
+  if (searchBox) {
+    searchBox.classList.toggle("active");
+  }
 }
 
-document.getElementById("overlay").onclick = closeMenu;
+const overlay = document.getElementById("overlay");
+if (overlay) {
+  overlay.onclick = closeMenu;
+}
 
 
 /* ===== SUPABASE ===== */
