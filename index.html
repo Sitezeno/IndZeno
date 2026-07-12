@@ -3,203 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>INDZENO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f5f7fb;
-padding-bottom:90px;
-}
-
-.header{
-position:sticky;
-top:0;
-z-index:999;
-background:#c40000;
-color:white;
-padding:15px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-box-shadow:0 4px 15px rgba(0,0,0,.2);
-}
-
-.logo{
-font-size:28px;
-font-weight:800;
-}
-
-.icon{
-font-size:24px;
-}
-
-.categories{
-display:flex;
-overflow-x:auto;
-gap:10px;
-padding:15px;
-background:white;
-}
-
-.categories::-webkit-scrollbar{
-display:none;
-}
-
-.categories span{
-padding:10px 18px;
-background:#eef2f7;
-border-radius:30px;
-white-space:nowrap;
-font-weight:600;
-}
-
-.hero{
-margin:15px;
-border-radius:25px;
-overflow:hidden;
-background:white;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.hero img{
-width:100%;
-height:250px;
-object-fit:cover;
-}
-
-.hero-content{
-padding:20px;
-}
-
-.hero-content h1{
-font-size:28px;
-font-weight:800;
-margin-bottom:10px;
-}
-
-.hero-content p{
-color:#666;
-}
-
-.section-title{
-font-size:24px;
-font-weight:700;
-padding:0 15px;
-margin:15px 0;
-}
-
-.news-card{
-background:white;
-margin:15px;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.news-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.card-body{
-padding:15px;
-}
-
-.card-body h3{
-font-size:20px;
-margin-bottom:10px;
-}
-
-.card-body p{
-color:#666;
-line-height:1.6;
-}
-
-.bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:white;
-display:flex;
-justify-content:space-around;
-padding:12px 0;
-box-shadow:0 -5px 20px rgba(0,0,0,.1);
-}
-
-.bottom-nav div{
-text-align:center;
-font-size:12px;
-font-weight:600;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="header">
-<div class="icon">☰</div>
-<div class="logo">INDZENO</div>
-<div class="icon">🔍</div>
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+<div class="sidebar-header">
+<h2>INDZENO</h2>
+<span onclick="closeMenu()">✖</span>
 </div>
 
+<a href="#">Home</a>
+<a href="#">AI</a>
+<a href="#">Politics</a>
+<a href="#">Movies</a>
+<a href="#">History</a>
+<a href="#">Biography</a>
+<a href="#">Influencers</a>
+</div>
+
+<!-- Header -->
+<header class="header">
+<div onclick="openMenu()">☰</div>
+<h1>INDZENO</h1>
+<div onclick="openSearch()">🔍</div>
+</header>
+
+<!-- Search -->
+<div id="searchBox" class="search-box">
+<input type="text" placeholder="Search News...">
+</div>
+
+<!-- Categories -->
 <div class="categories">
-<span>AI</span>
-<span>Politics</span>
-<span>Movies</span>
-<span>History</span>
-<span>Biography</span>
-<span>Influencers</span>
-<span>Technology</span>
+<button>AI</button>
+<button>Politics</button>
+<button>Movies</button>
+<button>History</button>
+<button>Biography</button>
+<button>Influencers</button>
 </div>
 
+<!-- Hero -->
 <div class="hero">
-<img src="https://picsum.photos/900/500?random=1">
-
+<img src="https://picsum.photos/900/500" alt="">
 <div class="hero-content">
-<h1>Top Breaking Story Of The Day</h1>
-<p>Latest updates from India and around the world.</p>
+<h2>Top Breaking Story</h2>
+<p>Latest updates from around the world.</p>
 </div>
 </div>
 
-<h2 class="section-title">🔥 Top Stories</h2>
-
-<div class="news-card">
-<img src="https://picsum.photos/900/500?random=11">
-
-<div class="card-body">
+<!-- Cards -->
+<div class="card">
+<img src="https://picsum.photos/900/501">
 <h3>AI Infrastructure Growing Fast</h3>
-<p>India is investing heavily in AI infrastructure and technology.</p>
-</div>
-</div>
-
-<div class="news-card">
-<img src="https://picsum.photos/900/500?random=12">
-
-<div class="card-body">
-<h3>Politics Update Today</h3>
-<p>Major political developments shaping the future.</p>
-</div>
+<p>India is investing heavily in AI technology.</p>
 </div>
 
-<div class="bottom-nav">
-<div>🏠<br>Home</div>
-<div>🤖<br>AI</div>
-<div>📰<br>News</div>
-<div>⭐<br>Stars</div>
-<div>👤<br>Profile</div>
+<div class="card">
+<img src="https://picsum.photos/900/502">
+<h3>Politics Update</h3>
+<p>Major political developments today.</p>
 </div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+<div>🏠</div>
+<div>🤖</div>
+<div>📰</div>
+<div>⭐</div>
+<div>👤</div>
+</nav>
+
+<script src="script.js"></script>
 
 </body>
 </html>
