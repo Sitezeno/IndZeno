@@ -1857,531 +1857,189 @@ font-weight:700;
 color:#111827;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
-
-.footer-tags a:hover{
-background:#d60000;
-color:#fff;
-}
-
-/* =========================
-   MEGA FOOTER
-========================= */
-
-.mega-footer{
-margin-top:30px;
-background:#111827;
-color:#fff;
-padding-top:40px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
-padding:20px;
-}
-
-.footer-col h2{
-font-size:32px;
-font-weight:900;
-}
-
-.footer-col h3{
-margin-bottom:15px;
-}
-
-.footer-col p{
-color:#cbd5e1;
-line-height:1.8;
-}
-
-.footer-col a{
-display:block;
-text-decoration:none;
-color:#cbd5e1;
-margin-bottom:10px;
-}
-
-.footer-col a:hover{
-color:#fff;
-}
-
-.footer-bottom{
-text-align:center;
-padding:20px;
-border-top:1px solid rgba(255,255,255,.1);
-color:#94a3b8;
-}
-
-/* =========================
-   FLOATING AI BUTTON
-========================= */
-
-.ai-float-btn{
-position:fixed;
-right:20px;
-bottom:95px;
-width:60px;
-height:60px;
-border:none;
-border-radius:50%;
-background:#d60000;
-color:#fff;
-font-size:26px;
-cursor:pointer;
-box-shadow:0 10px 25px rgba(214,0,0,.35);
-z-index:999;
-}
-
-/* =========================
-   BOTTOM NAV
-========================= */
-
-.bottom-nav{
-position:fixed;
-left:0;
-bottom:0;
-width:100%;
-height:75px;
-background:#fff;
-display:flex;
-justify-content:space-around;
-align-items:center;
-box-shadow:0 -5px 20px rgba(0,0,0,.08);
-z-index:998;
-}
-
-.bottom-nav a{
-text-decoration:none;
-display:flex;
-flex-direction:column;
-align-items:center;
-color:#6b7280;
-font-size:12px;
-font-weight:700;
-}
-
-.bottom-nav a i{
-font-size:22px;
-margin-bottom:4px;
-}
-
-.bottom-nav a:hover{
-color:#d60000;
-}
-
-/* =========================
-   GLOBAL CARD EFFECT
-========================= */
-
-.news-card,
-.featured-card,
-.choice-card,
-.bio-card,
-.tech-card,
-.pick-card,
-.author-card,
-.market-card,
-.crypto-card{
-transition:.35s;
-}
-
-.news-card:hover,
-.featured-card:hover,
-.choice-card:hover,
-.bio-card:hover,
-.tech-card:hover,
-.pick-card:hover,
-.author-card:hover,
-.market-card:hover,
-.crypto-card:hover{
-transform:translateY(-6px);
-}
-
-/* =========================
-   SCROLLBAR
-========================= */
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:#d60000;
-border-radius:20px;
-}
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media(min-width:1000px){
-
-.download-box{
-grid-template-columns:1fr 1fr;
-align-items:center;
-}
-
-.footer-grid{
-grid-template-columns:
-2fr 1fr 1fr 1fr;
-}
-
-.social-grid{
-grid-template-columns:
-repeat(6,1fr);
-}
-/* =========================
-   INDZENO AI CHAT
-========================= */
-background:#07142d;
-padding:35px 25px;
-color:white;
-}
-
-.support-section h2{
-font-size:28px;
-margin-bottom:20px;
-}
-
-.support-section a{
-display:block;
-color:#d1d5db;
-text-decoration:none;
-margin-bottom:15px;
-font-size:16px;
-}
-
-.support-section a:hover{
-color:white;
-}
-
-.copyright{
-border-top:1px solid rgba(255,255,255,.1);
-margin-top:25px;
-padding-top:20px;
-text-align:center;
-color:#9ca3af;
-}
-
-/* =========================
-   AI FLOAT WINDOW
-========================= */
-
-.ai-window{
-position:fixed;
-bottom:90px;
-right:15px;
-width:350px;
-max-width:90%;
-background:white;
-border-radius:24px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.25);
-z-index:9999;
-display:none;
-}
-
-.ai-window.active{
-display:block;
-}
-
-.ai-window-header{
-background:#d60000;
-color:white;
-padding:15px;
-font-weight:800;
-font-size:18px;
-}
-
-.ai-window-body{
-padding:15px;
-max-height:350px;
-overflow:auto;
-}
-
-.ai-window-footer{
-padding:15px;
-border-top:1px solid #eee;
-}
-
-.ai-window-footer input{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:12px;
-}
-
-/* MOBILE FIX */
-
-@media(max-width:768px){
-
-.ai-chat-box h2{
-font-size:26px;
-}
-
-.feed-card h3,
-.saved-card h3{
-font-size:18px;
-}
-
-.ai-window{
-width:95%;
-right:2.5%;
-}
-
-}
-/* AI Widget Professional */
-
-.ai-chat,
-#aiChat,
-.ai-assistant {
-    background: #ffffff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-.ai-chat h2,
-#aiChat h2{
-    font-size: 28px;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 15px;
-}
-
-.ai-chat input,
-#aiChat input{
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.ai-chat button,
-#aiChat button{
-    background: #d50000;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 12px;
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-/* Article Box */
-
-#articleModal,
-.article-modal{
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-#articleModal h2{
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-/* Saved Articles */
-
-.saved-articles{
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-/* Live Feed */
-
-.live-news-feed{
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-/* Floating AI Button */
-
-.ai-float-btn,
-#aiFloatingBtn{
-    position: fixed;
-    right: 20px;
-    bottom: 90px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: #d50000;
-    color: white;
-    border: none;
-    font-size: 28px;
-    box-shadow: 0 10px 30px rgba(213,0,0,.4);
-    z-index: 999;
-}
-/* NEWS PAGE PREMIUM UI */
-
-.page-banner{
-padding:100px 20px 30px;
-background:linear-gradient(135deg,#d50000,#ff1e1e);
-color:#fff;
-text-align:center;
-}
-
-.page-banner h1{
-font-size:34px;
-font-weight:800;
-margin-bottom:10px;
-}
-
-.page-banner p{
-font-size:15px;
-opacity:.9;
-}
-
-.news-section,
-.live-updates,
-.categories-news{
-padding:20px;
-}
-
-.section-heading{
-font-size:28px;
-font-weight:800;
-color:#0f172a;
-margin-bottom:20px;
-}
-
-.news-grid{
-display:grid;
-gap:20px;
-}
-
-.news-card{
-background:#fff;
-border-radius:24px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.news-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-display:block;
-}
-
-.news-content{
-padding:18px;
-}
-
-.news-tag{
-background:#d50000;
-color:#fff;
-padding:6px 14px;
-border-radius:50px;
-font-size:12px;
-font-weight:700;
-display:inline-block;
-margin-bottom:12px;
-}
-
-.news-content h3{
-font-size:24px;
-font-weight:800;
-margin-bottom:10px;
-color:#111827;
-}
-
-.news-content p{
-color:#6b7280;
-line-height:1.6;
-}
-
-.live-updates{
-background:#fff;
-margin:20px;
-border-radius:24px;
-padding:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.update-card{
-padding:15px;
-border-left:5px solid #d50000;
-background:#f8fafc;
-margin-bottom:15px;
-border-radius:12px;
-}
-
-.time{
-color:#d50000;
-font-weight:700;
-margin-bottom:5px;
-}
-
-.category-pills{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-}
-
-.category-pills span{
-background:#fff;
-padding:12px 20px;
-border-radius:50px;
-font-weight:700;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.bottom-nav a.active{
-color:#d50000;
-}
-
-@media(max-width:768px){
-
-.news-card img{
-height:200px;
-}
-
-.news-content h3{
-font-size:22px;
-}
-
-.page-banner h1{
-font-size:28px;
-}
-.biography-block,
-.influencer-block,
-.technology-block,
-.video-news,
-.popular-topics,
-.market-section,
-.weather-widget,
-.crypto-section,
-.editor-picks,
-.authors-section,
-.newsletter-pro,
-.app-download,
-.social-section,
-footer{
-    display:block !important;
-    visibility:visible !important;
-    opacity:1 !important;
-}
+/* ===== PREMIUM MOBILE FIX ===== */
 
 body{
+    background:#f5f7fb;
+    padding-bottom:90px;
     overflow-x:hidden;
 }
 
-img{
+/* Sections */
+section{
     width:100%;
-    height:auto;
+    clear:both;
     display:block;
+    margin:25px 0;
+}
+
+/* All Cards */
+.featured-card,
+.news-card,
+.choice-card,
+.bio-card,
+.tech-card,
+.influencer-card,
+.video-card,
+.market-card,
+.crypto-card,
+.author-card{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:20px;
+}
+
+/* Images */
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* Popular Topics */
+.popular-topics{
+    background:#fff;
+    padding:25px;
+    border-radius:24px;
+    margin:30px 20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    position:relative;
+    z-index:1;
+}
+
+.topic-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.topic-tags span{
+    background:#f3f4f6;
+    padding:12px 18px;
+    border-radius:999px;
+    font-weight:600;
+}
+
+/* Featured Stories Fix */
+.featured-section{
+    position:relative;
+    z-index:2;
+    margin-top:30px;
+}
+
+/* Category Lists */
+.list-item{
+    background:#fff;
+    margin:12px 0;
+    padding:18px;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Biography */
+.bio-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+/* Footer */
+.mega-footer{
+    background:#08142d;
+    color:#fff;
+    padding:40px 20px 120px;
+}
+
+/* Floating AI */
+.ai-fab,
+.chat-fab{
+    position:fixed;
+    right:20px;
+    bottom:100px;
+    z-index:999;
+}
+
+/* Bottom Navigation */
+.bottom-nav{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:78px;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top:1px solid #eee;
+    z-index:99999;
+    box-shadow:0 -5px 25px rgba(0,0,0,.08);
+}
+
+.bottom-nav a{
+    text-decoration:none;
+    color:#6b7280;
+    font-size:13px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    font-weight:600;
+}
+
+.bottom-nav i{
+    font-size:22px;
+}
+
+.bottom-nav a.active{
+    color:#e60000;
+}
+
+/* Fix Overlap */
+.featured-section,
+.latest-news,
+.top-stories,
+.editor-choice,
+.category-block,
+.bio-grid,
+.tech-grid,
+.video-news,
+.market-section,
+.crypto-section,
+.authors-section{
+    position:relative;
+    z-index:1;
+    clear:both;
+}
+
+/* Hero */
+.hero-slider{
+    margin:20px;
+}
+
+.hero-slide{
+    border-radius:30px;
+    overflow:hidden;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .featured-grid,
+    .news-grid,
+    .choice-grid,
+    .bio-grid,
+    .tech-grid,
+    .video-grid,
+    .authors-grid{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .market-grid,
+    .crypto-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+    }
 }
