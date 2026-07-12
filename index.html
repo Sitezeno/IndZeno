@@ -2,81 +2,453 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INDZENO</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>INDZENO - Premium News</title>
 
 <link rel="stylesheet" href="style.css">
-</head>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
 <body>
 
+<!-- Overlay -->
+
+<div id="overlay"></div>
+
 <!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-<div class="sidebar-header">
+
+<div class="sidebar" id="sidebar">
+
+<div class="sidebar-top">
 <h2>INDZENO</h2>
-<span onclick="closeMenu()">✖</span>
+
+<i class="fas fa-times" onclick="closeMenu()"></i>
 </div>
 
-<a href="#">Home</a>
-<a href="#">AI</a>
-<a href="#">Politics</a>
-<a href="#">Movies</a>
-<a href="#">History</a>
-<a href="#">Biography</a>
-<a href="#">Influencers</a>
+<a href="index.html">
+<i class="fas fa-home"></i>
+Home
+</a>
+
+<a href="news.html">
+<i class="fas fa-newspaper"></i>
+News
+</a>
+
+<a href="history.html">
+<i class="fas fa-landmark"></i>
+History
+</a>
+
+<a href="movies.html">
+<i class="fas fa-film"></i>
+Movies
+</a>
+
+<a href="politics.html">
+<i class="fas fa-scale-balanced"></i>
+Politics
+</a>
+
+<a href="biography.html">
+<i class="fas fa-user"></i>
+Biography
+</a>
+
+<a href="ai.html">
+<i class="fas fa-robot"></i>
+AI
+</a>
+
+<a href="influencers.html">
+<i class="fas fa-star"></i>
+Influencers
+</a>
+
+<a href="about.html">
+<i class="fas fa-circle-info"></i>
+About
+</a>
+
+<a href="contact.html">
+<i class="fas fa-phone"></i>
+Contact
+</a>
+
 </div>
 
 <!-- Header -->
-<header class="header">
-<div onclick="openMenu()">☰</div>
-<h1>INDZENO</h1>
-<div onclick="openSearch()">🔍</div>
+
+<header class="topbar">
+
+<div class="menu-btn" onclick="openMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="logo">
+INDZENO
+</div>
+
+<div class="search-btn" onclick="openSearch()">
+<i class="fas fa-search"></i>
+</div>
+
 </header>
 
-<!-- Search -->
-<div id="searchBox" class="search-box">
-<input type="text" placeholder="Search News...">
+<!-- Search Popup -->
+
+<div class="search-box" id="searchBox">
+
+<div class="search-card">
+
+<input
+type="text"
+placeholder="Search News..."
+>
+
+<button>
+Search
+</button>
+
 </div>
 
-<!-- Categories -->
+</div>
+
+<!-- Breaking News -->
+
+<div class="breaking">
+
+<div class="breaking-track">
+
+<span>🔴 LIVE</span>
+
+<span>AI Revolution</span>
+
+<span>Politics Update</span>
+
+<span>Movies News</span>
+
+<span>Influencers</span>
+
+<span>History</span>
+
+<span>Technology</span>
+
+<span>Biography</span>
+
+</div>
+
+</div>
+
+<!-- Category Pills -->
+
 <div class="categories">
+
 <button>AI</button>
+
 <button>Politics</button>
+
 <button>Movies</button>
+
 <button>History</button>
+
 <button>Biography</button>
+
 <button>Influencers</button>
+
+<button>Technology</button>
+
 </div>
 
-<!-- Hero -->
-<div class="hero">
-<img src="https://picsum.photos/900/500" alt="">
+<!-- Hero News -->
+
+<section class="hero">
+
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
+alt=""
+>
+
 <div class="hero-content">
-<h2>Top Breaking Story</h2>
-<p>Latest updates from around the world.</p>
-</div>
+
+<span class="tag">
+Breaking
+</span>
+
+<h1>
+AI Infrastructure Growing Fast Across India
+</h1>
+
+<p>
+Latest developments from technology and innovation sectors.
+</p>
+
 </div>
 
-<!-- Cards -->
-<div class="card">
-<img src="https://picsum.photos/900/501">
-<h3>AI Infrastructure Growing Fast</h3>
-<p>India is investing heavily in AI technology.</p>
+</section>
+
+<!-- News Feed -->
+
+<section class="news-section">
+
+<h2>
+🔥 Top Stories
+</h2>
+
+<div class="news-grid">
+
+<div class="news-card">
+
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000">
+
+<div class="card-content">
+
+<span class="category">
+AI
+</span>
+
+<h3>
+India Building Massive AI Infrastructure
+</h3>
+
+<p>
+Government launches new AI initiatives across the nation.
+</p>
+
 </div>
 
-<div class="card">
-<img src="https://picsum.photos/900/502">
-<h3>Politics Update</h3>
-<p>Major political developments today.</p>
 </div>
 
-<!-- Bottom Nav -->
+<div class="news-card">
+
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1000">
+
+<div class="card-content">
+
+<span class="category">
+Politics
+</span>
+
+<h3>
+Parliament Approves Major Development Bill
+</h3>
+
+<p>
+New reforms expected to impact future growth.
+</p>
+
+</div>
+
+</div>
+
+<div class="news-card">
+
+<img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1000">
+
+<div class="card-content">
+
+<span class="category">
+Movies
+</span>
+
+<h3>
+Regional Cinema Creates New Records
+</h3>
+
+<p>
+Box office collection crosses expectations.
+</p>
+
+</div>
+
+</div>
+<div class="news-card">
+
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000">
+
+        <div class="card-content">
+
+          <span class="category">
+            Technology
+          </span>
+
+          <h3>
+            New AI Startups Emerging Worldwide
+          </h3>
+
+          <p>
+            Innovative solutions are transforming industries.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000">
+
+        <div class="card-content">
+
+          <span class="category">
+            Influencers
+          </span>
+
+          <h3>
+            Digital Creators Driving New Trends
+          </h3>
+
+          <p>
+            Social platforms continue massive growth.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=1000">
+
+        <div class="card-content">
+
+          <span class="category">
+            History
+          </span>
+
+          <h3>
+            Ancient Discoveries Shock Researchers
+          </h3>
+
+          <p>
+            Archaeologists uncover forgotten civilizations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+</section>
+
+<!-- Trending Section -->
+
+<section class="trending-news">
+
+<h2>
+📈 Trending Now
+</h2>
+
+<div class="trend-card">
+
+<img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200">
+
+<div>
+
+<h3>
+Global Technology Summit Begins
+</h3>
+
+<p>
+Experts gather to discuss AI future and innovation.
+</p>
+
+</div>
+
+</div>
+
+<div class="trend-card">
+
+<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1200">
+
+<div>
+
+<h3>
+Economy Shows Positive Signals
+</h3>
+
+<p>
+Markets respond positively to new developments.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Newsletter -->
+
+<section class="newsletter">
+
+<h2>
+🚀 Stay Updated
+</h2>
+
+<p>
+Get latest news directly on your device.
+</p>
+
+<input
+type="email"
+placeholder="Enter Email Address"
+>
+
+<button>
+Subscribe
+</button>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<h2>
+INDZENO
+</h2>
+
+<p>
+Premium News • AI • Politics • History • Movies
+</p>
+
+</footer>
+
+<!-- Bottom Navigation -->
+
 <nav class="bottom-nav">
-<div>🏠</div>
-<div>🤖</div>
-<div>📰</div>
-<div>⭐</div>
-<div>👤</div>
+
+<a href="index.html">
+<i class="fas fa-home"></i>
+<span>Home</span>
+</a>
+
+<a href="news.html">
+<i class="fas fa-newspaper"></i>
+<span>News</span>
+</a>
+
+<a href="ai.html">
+<i class="fas fa-robot"></i>
+<span>AI</span>
+</a>
+
+<a href="influencers.html">
+<i class="fas fa-star"></i>
+<span>Stars</span>
+</a>
+
+<a href="contact.html">
+<i class="fas fa-user"></i>
+<span>Profile</span>
+</a>
+
 </nav>
 
 <script src="script.js"></script>
