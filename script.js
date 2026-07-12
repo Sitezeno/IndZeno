@@ -1,8 +1,21 @@
-console.log("INDZENO Loaded Successfully");
+function openMenu(){
+document.getElementById("sidebar").style.left="0";
+}
 
-document.getElementById("main-content").innerHTML = `
-<div class="bg-white rounded-2xl p-6 shadow">
-  <h2 class="text-2xl font-bold">Welcome to INDZENO</h2>
-  <p class="mt-2">Latest News Loading...</p>
-</div>
-`;
+function closeMenu(){
+document.getElementById("sidebar").style.left="-280px";
+}
+
+function openSearch(){
+
+const box=document.getElementById("searchBox");
+
+if(box.style.display==="block"){
+box.style.display="none";
+}else{
+box.style.display="block";
+}
+
+}
+
+console.log("INDZENO Loaded Successfully");
