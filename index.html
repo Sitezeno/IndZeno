@@ -3,67 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INDZENO - News Portal</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>INDZENO</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f5f7fb;
+padding-bottom:90px;
+}
+
+.header{
+position:sticky;
+top:0;
+z-index:999;
+background:#c40000;
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+}
+
+.icon{
+font-size:24px;
+}
+
+.categories{
+display:flex;
+overflow-x:auto;
+gap:10px;
+padding:15px;
+background:white;
+}
+
+.categories::-webkit-scrollbar{
+display:none;
+}
+
+.categories span{
+padding:10px 18px;
+background:#eef2f7;
+border-radius:30px;
+white-space:nowrap;
+font-weight:600;
+}
+
+.hero{
+margin:15px;
+border-radius:25px;
+overflow:hidden;
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.hero img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.hero-content{
+padding:20px;
+}
+
+.hero-content h1{
+font-size:28px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.hero-content p{
+color:#666;
+}
+
+.section-title{
+font-size:24px;
+font-weight:700;
+padding:0 15px;
+margin:15px 0;
+}
+
+.news-card{
+background:white;
+margin:15px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.news-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-body{
+padding:15px;
+}
+
+.card-body h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.card-body p{
+color:#666;
+line-height:1.6;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+box-shadow:0 -5px 20px rgba(0,0,0,.1);
+}
+
+.bottom-nav div{
+text-align:center;
+font-size:12px;
+font-weight:600;
+}
+</style>
 </head>
 
 <body>
 
-<!-- Sidebar -->
-
-<div id="sidebar" class="sidebar">
-
-<div class="sidebar-header">
-<h2>INDZENO</h2>
-<span onclick="closeMenu()">✖</span>
+<div class="header">
+<div class="icon">☰</div>
+<div class="logo">INDZENO</div>
+<div class="icon">🔍</div>
 </div>
 
-<a href="index.html">🏠 Home</a>
-<a href="news.html">📰 News</a>
-<a href="history.html">🏛 History</a>
-<a href="movies.html">🎬 Movies</a>
-<a href="politics.html">⚖ Politics</a>
-<a href="biography.html">👤 Biography</a>
-<a href="ai.html">🤖 AI</a>
-<a href="influencers.html">⭐ Influencers</a>
-<a href="about.html">ℹ About</a>
-<a href="contact.html">📞 Contact</a>
-
-</div>
-
-<!-- Header -->
-
-<header class="topbar">
-
-<div class="menu-btn" onclick="openMenu()">☰</div>
-
-<div class="logo">
-INDZENO
-</div>
-
-<div class="search-btn">
-🔍
-</div>
-
-</header>
-
-<!-- Breaking News -->
-
-<div class="breaking">
-
-<marquee>
-🔴 BREAKING NEWS • AI Revolution • Politics • Movies • Influencers • History • Biography • Technology
-</marquee>
-
-</div>
-
-<!-- Trending Categories -->
-
-<div class="trending">
-
+<div class="categories">
 <span>AI</span>
 <span>Politics</span>
 <span>Movies</span>
@@ -71,364 +162,44 @@ INDZENO
 <span>Biography</span>
 <span>Influencers</span>
 <span>Technology</span>
-
 </div>
 
-<!-- Hero Section -->
-
-<section class="hero">
-
-<img src="https://picsum.photos/900/500?1">
+<div class="hero">
+<img src="https://picsum.photos/900/500?random=1">
 
 <div class="hero-content">
-
 <h1>Top Breaking Story Of The Day</h1>
-
-<p>
-Latest updates from India and around the world.
-</p>
-
+<p>Latest updates from India and around the world.</p>
+</div>
 </div>
 
-</section>
-
-<!-- Top Stories -->
-
-<section class="section">
-
-<h2 class="section-title">
-🔥 Top Stories
-</h2>
+<h2 class="section-title">🔥 Top Stories</h2>
 
 <div class="news-card">
+<img src="https://picsum.photos/900/500?random=11">
 
-<img src="https://picsum.photos/700/400?11">
-
-<div class="card-content">
-
+<div class="card-body">
 <h3>AI Infrastructure Growing Fast</h3>
-
-<p>
-India is investing heavily in AI infrastructure and technology.
-</p>
-
+<p>India is investing heavily in AI infrastructure and technology.</p>
 </div>
-
 </div>
 
 <div class="news-card">
+<img src="https://picsum.photos/900/500?random=12">
 
-<img src="https://picsum.photos/700/400?12">
-
-<div class="card-content">
-
+<div class="card-body">
 <h3>Politics Update Today</h3>
-
-<p>
-Latest political developments and analysis.
-</p>
-
+<p>Major political developments shaping the future.</p>
 </div>
-
 </div>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?13">
-
-<div class="card-content">
-
-<h3>Movie Industry News</h3>
-
-<p>
-New movies and entertainment updates.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- AI Section -->
-
-<section class="section">
-
-<h2 class="section-title">
-🤖 AI Updates
-</h2>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?14">
-
-<div class="card-content">
-
-<h3>Future Of Artificial Intelligence</h3>
-
-<p>
-AI tools are changing the future of work and business.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Politics Section -->
-
-<section class="section">
-
-<h2 class="section-title">
-⚖ Politics
-</h2>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?15">
-
-<div class="card-content">
-
-<h3>National Policy Changes</h3>
-
-<p>
-Major policy decisions impacting the country.
-</p>
-
-</div>
-
-</div>
-
-</section>
-<!-- History Section -->
-
-<section class="section">
-
-<h2 class="section-title">
-🏛 History
-</h2>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?16">
-
-<div class="card-content">
-
-<h3>Ancient Civilizations</h3>
-
-<p>
-Explore the world's greatest civilizations and empires.
-</p>
-
-</div>
-
-</div>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?17">
-
-<div class="card-content">
-
-<h3>Indian Heritage</h3>
-
-<p>
-Historical places, kings and cultural heritage.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Biography Section -->
-
-<section class="section">
-
-<h2 class="section-title">
-👤 Biography
-</h2>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?18">
-
-<div class="card-content">
-
-<h3>Famous Personalities</h3>
-
-<p>
-Life stories of successful leaders and innovators.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Influencers Section -->
-
-<section class="section">
-
-<h2 class="section-title">
-⭐ Influencers
-</h2>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?19">
-
-<div class="card-content">
-
-<h3>Top YouTubers</h3>
-
-<p>
-Latest updates from creators and influencers.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Movies Section -->
-
-<section class="section">
-
-<h2 class="section-title">
-🎬 Movies
-</h2>
-
-<div class="news-card">
-
-<img src="https://picsum.photos/700/400?20">
-
-<div class="card-content">
-
-<h3>Latest Movie Reviews</h3>
-
-<p>
-Reviews, trailers and entertainment news.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- About -->
-
-<section class="section">
-
-<h2 class="section-title">
-ℹ About INDZENO
-</h2>
-
-<div class="news-card">
-
-<div class="card-content">
-
-<p>
-INDZENO is a modern news and information platform covering AI, Politics, History, Movies and Influencers.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section class="section">
-
-<h2 class="section-title">
-📞 Contact
-</h2>
-
-<div class="news-card">
-
-<div class="card-content">
-
-<p>Email: contact@indzeno.com</p>
-<p>Website: www.indzeno.com</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Footer -->
-
-<footer class="footer">
-
-<h3>INDZENO</h3>
-
-<p>
-News • AI • Politics • Movies • History
-</p>
-
-<p>
-© 2026 INDZENO. All Rights Reserved.
-</p>
-
-</footer>
-
-<!-- Bottom Navigation -->
 
 <div class="bottom-nav">
-
-<a href="index.html">
-🏠
-<br>
-Home
-</a>
-
-<a href="news.html">
-📰
-<br>
-News
-</a>
-
-<a href="ai.html">
-🤖
-<br>
-AI
-</a>
-
-<a href="influencers.html">
-⭐
-<br>
-Stars
-</a>
-
-<a href="contact.html">
-📞
-<br>
-Contact
-</a>
-
+<div>🏠<br>Home</div>
+<div>🤖<br>AI</div>
+<div>📰<br>News</div>
+<div>⭐<br>Stars</div>
+<div>👤<br>Profile</div>
 </div>
-
-<!-- JavaScript -->
-
-<script>
-
-function openMenu(){
-document.getElementById("sidebar").style.left="0";
-}
-
-function closeMenu(){
-document.getElementById("sidebar").style.left="-280px";
-}
-
-</script>
 
 </body>
 </html>
