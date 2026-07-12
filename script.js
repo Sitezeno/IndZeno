@@ -1,21 +1,15 @@
 function openMenu(){
-document.getElementById("sidebar").style.left="0";
+document.getElementById("sidebar").classList.add("active");
+document.getElementById("overlay").classList.add("active");
 }
 
 function closeMenu(){
-document.getElementById("sidebar").style.left="-280px";
+document.getElementById("sidebar").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
 }
 
 function openSearch(){
-
-const box=document.getElementById("searchBox");
-
-if(box.style.display==="block"){
-box.style.display="none";
-}else{
-box.style.display="block";
+document.getElementById("searchBox").classList.toggle("active");
 }
 
-}
-
-console.log("INDZENO Loaded Successfully");
+document.getElementById("overlay").onclick = closeMenu;
