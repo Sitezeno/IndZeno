@@ -125,8 +125,24 @@ font-weight:bold;
 text-align:center;
 }
 </style>
+  .sidebar{
+position:fixed;
+top:0;
+left:-250px;
+width:250px;
+height:100%;
+background:#111;
+transition:0.3s;
+z-index:9999;
+padding-top:20px;
+}
 </head>
+
+<body>
+
 <div id="sidebar" class="sidebar">
+...
+</div>
   <span onclick="closeMenu()" class="close-btn">✖</span>
 
   <a href="index.html">🏠 Home</a>
@@ -153,7 +169,7 @@ function closeMenu(){
 <body>
 
 <header class="topbar">
-<div>☰</div>
+<div class="menu" onclick="openMenu()">☰</div>
 <div class="logo">INDZENO</div>
 <div>🔍</div>
 </header>
@@ -222,6 +238,14 @@ function closeMenu(){
 <a href="influencers.html">⭐<br>Stars</a>
 <a href="contact.html">☰<br>Menu</a>
 </div>
+<script>
+function openMenu() {
+  document.getElementById("sidebar").style.left = "0";
+}
 
+function closeMenu() {
+  document.getElementById("sidebar").style.left = "-250px";
+}
+</script>
 </body>
 </html>
