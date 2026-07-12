@@ -126,7 +126,30 @@ text-align:center;
 }
 </style>
 </head>
+<div id="sidebar" class="sidebar">
+  <span onclick="closeMenu()" class="close-btn">✖</span>
 
+  <a href="index.html">🏠 Home</a>
+  <a href="news.html">📰 News</a>
+  <a href="history.html">🏛 History</a>
+  <a href="movies.html">🎬 Movies</a>
+  <a href="politics.html">🏛 Politics</a>
+  <a href="biography.html">👤 Biography</a>
+  <a href="ai.html">🤖 AI</a>
+  <a href="influencers.html">⭐ Influencers</a>
+  <a href="about.html">ℹ About</a>
+  <a href="contact.html">📞 Contact</a>
+</div>
+
+<script>
+function openMenu(){
+ document.getElementById("sidebar").style.left="0";
+}
+
+function closeMenu(){
+ document.getElementById("sidebar").style.left="-250px";
+}
+</script>
 <body>
 
 <header class="topbar">
