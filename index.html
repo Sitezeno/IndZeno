@@ -1,64 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>INDZENO</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
+body{
+background:#f5f5f5;
+padding-bottom:80px;
+}
+
+.topbar{
+background:#c40000;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.breaking{
+background:#ff0000;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
+.trending{
+display:flex;
+overflow:auto;
+gap:10px;
+padding:12px;
+background:white;
+}
+
+.trending span{
+background:#ececec;
+padding:8px 15px;
+border-radius:20px;
+white-space:nowrap;
+}
+
+.hero{
+margin:12px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.hero img{
+width:100%;
+display:block;
+}
+
+.hero-content{
+padding:15px;
+}
+
+.hero-content h2{
+margin-bottom:10px;
+}
+
+.section-title{
+padding:15px;
+font-size:22px;
+font-weight:bold;
+}
+
+.news-card{
+background:white;
+margin:12px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.news-card img{
+width:100%;
+display:block;
+}
+
+.news-card-content{
+padding:15px;
+}
+
+.news-card h3{
+margin-bottom:8px;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+box-shadow:0 -2px 10px rgba(0,0,0,.15);
+}
+
+.bottom-nav a{
+text-decoration:none;
+color:#222;
+font-size:12px;
+font-weight:bold;
+text-align:center;
+}
+</style>
 </head>
 
 <body>
-  <header class="topbar">
-  <div class="menu">☰</div>
-  <div class="logo">INDZENO</div>
-  <div class="search">🔍</div>
+
+<header class="topbar">
+<div>☰</div>
+<div class="logo">INDZENO</div>
+<div>🔍</div>
 </header>
 
 <div class="breaking">
-  <marquee>
-    🔴 BREAKING NEWS • AI Updates • Politics • Movies • Influencers • History
-  </marquee>
+<marquee>
+🔴 BREAKING NEWS • AI • Politics • Movies • Influencers • History
+</marquee>
 </div>
 
 <div class="trending">
-  <span>AI</span>
-  <span>Politics</span>
-  <span>Cricket</span>
-  <span>Movies</span>
-  <span>History</span>
+<span>AI</span>
+<span>Politics</span>
+<span>Movies</span>
+<span>History</span>
+<span>Biography</span>
+<span>Influencers</span>
 </div>
 
-<section class="hero-news">
-  <img src="https://picsum.photos/800/450" alt="News">
-  <h2>Top Breaking Story Of The Day</h2>
-  <p>Latest news updates from India and around the world.</p>
+<section class="hero">
+<img src="https://picsum.photos/900/500" alt="">
+<div class="hero-content">
+<h2>Top Breaking Story Of The Day</h2>
+<p>Latest updates from India and around the world.</p>
+</div>
 </section>
 
-<section class="feed">
+<div class="section-title">🔥 Top Stories</div>
 
 <div class="news-card">
-<img src="https://picsum.photos/600/300?1">
+<img src="https://picsum.photos/700/400?1">
+<div class="news-card-content">
 <h3>Breaking News</h3>
 <p>Latest national and international updates.</p>
 </div>
+</div>
 
 <div class="news-card">
-<img src="https://picsum.photos/600/300?2">
+<img src="https://picsum.photos/700/400?2">
+<div class="news-card-content">
 <h3>AI Revolution</h3>
 <p>Artificial Intelligence latest developments.</p>
 </div>
-
-<div class="news-card">
-<img src="https://picsum.photos/600/300?3">
-<h3>Politics</h3>
-<p>Political analysis and updates.</p>
 </div>
 
-</section>
+<div class="news-card">
+<img src="https://picsum.photos/700/400?3">
+<div class="news-card-content">
+<h3>Politics Today</h3>
+<p>Political analysis and current affairs coverage.</p>
+</div>
+</div>
+
+<div class="news-card">
+<img src="https://picsum.photos/700/400?4">
+<div class="news-card-content">
+<h3>Influencers</h3>
+<p>Top YouTubers and content creators updates.</p>
+</div>
+</div>
 
 <div class="bottom-nav">
 <a href="index.html">🏠<br>Home</a>
@@ -67,94 +199,6 @@
 <a href="influencers.html">⭐<br>Stars</a>
 <a href="contact.html">☰<br>Menu</a>
 </div>
-
-<header class="header">
-<div class="logo">INDZENO</div>
-
-<p>News • History • Movies • AI • Influencers</p>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="news.html">News</a>
-<a href="history.html">History</a>
-<a href="movies.html">Movies</a>
-<a href="politics.html">Politics</a>
-<a href="biography.html">Biography</a>
-<a href="ai.html">AI</a>
-<a href="influencers.html">Influencers</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
-
-<section class="hero">
-<h1>Welcome To INDZENO</h1>
-<p>India's Modern News, History, Movies, AI & Influencer Portal</p>
-</section>
-
-<div class="grid">
-
-<div class="card">
-<h3>📰 News</h3>
-<p>Latest News Updates</p>
-<a href="news.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>🏛 History</h3>
-<p>History Facts & Stories</p>
-<a href="history.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>🎬 Movies</h3>
-<p>Movie Reviews & Updates</p>
-<a href="movies.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>🏛 Politics</h3>
-<p>Political News & Analysis</p>
-<a href="politics.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>👤 Biography</h3>
-<p>Famous People Stories</p>
-<a href="biography.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>🤖 AI</h3>
-<p>Artificial Intelligence Updates</p>
-<a href="ai.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>⭐ Influencers</h3>
-<p>Top Creators & YouTubers</p>
-<a href="influencers.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>ℹ About</h3>
-<p>About INDZENO</p>
-<a href="about.html">Read More</a>
-</div>
-
-<div class="card">
-<h3>📞 Contact</h3>
-<p>Contact Our Team</p>
-<a href="contact.html">Read More</a>
-</div>
-
-</div>
-
-<footer>
-© 2026 INDZENO. All Rights Reserved.
-</footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
