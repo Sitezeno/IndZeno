@@ -5,79 +5,206 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>IndZeno</title>
+<title>INDZENO</title>
 
-<meta name="description"
-content="Latest News, Movies, Politics, AI, Biography, History and Influencers Updates">
+<meta name="theme-color"
+content="#d60000">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 </head>
 
 <body>
 
-<header class="header">
+<div id="overlay"></div>
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+<div class="menu-btn"
+id="openMenu">
+
+<i class="fas fa-bars"></i>
+
+</div>
 
 <div class="logo">
 
-<a href="index.html">
 INDZENO
-</a>
 
 </div>
 
-<div class="header-right">
+<div class="search-btn"
+id="openSearch">
 
-<div id="liveTime">
-Loading...
-</div>
-
-<button id="menuBtn">
-☰
-</button>
+<i class="fas fa-search"></i>
 
 </div>
 
 </header>
 
-<nav id="sideMenu" class="side-menu">
+<!-- SIDEBAR -->
 
-<a href="index.html">Home</a>
+<aside class="sidebar"
+id="sidebar">
 
-<a href="news.html">News</a>
+<div class="sidebar-header">
 
-<a href="history.html">History</a>
+<div class="brand">
 
-<a href="movies.html">Movies</a>
+<div class="brand-logo">
 
-<a href="politics.html">Politics</a>
+IZ
 
-<a href="biography.html">Biography</a>
+</div>
 
-<a href="ai.html">AI</a>
+<div class="brand-info">
 
-<a href="influencers.html">Influencers</a>
+<h2>INDZENO</h2>
 
-<a href="about.html">About Us</a>
+<p>
+Real Time News
+</p>
 
-<a href="contact.html">Contact Us</a>
+</div>
 
-</nav>
+</div>
 
-<section class="search-section">
+<div id="closeMenu"
+class="close-sidebar">
 
-<div class="search-box">
+✕
+
+</div>
+
+</div>
+
+<div class="sidebar-menu">
+
+<a href="index.html">
+
+<i class="fas fa-home"></i>
+
+Home
+
+</a>
+
+<a href="news.html">
+
+<i class="fas fa-newspaper"></i>
+
+News
+
+</a>
+
+<a href="history.html">
+
+<i class="fas fa-landmark"></i>
+
+History
+
+</a>
+
+<a href="movies.html">
+
+<i class="fas fa-film"></i>
+
+Movies
+
+</a>
+
+<a href="politics.html">
+
+<i class="fas fa-flag"></i>
+
+Politics
+
+</a>
+
+<a href="biography.html">
+
+<i class="fas fa-user"></i>
+
+Biography
+
+</a>
+
+<a href="ai.html">
+
+<i class="fas fa-robot"></i>
+
+AI
+
+</a>
+
+<a href="influencers.html">
+
+<i class="fas fa-star"></i>
+
+Influencers
+
+</a>
+
+<a href="about.html">
+
+<i class="fas fa-circle-info"></i>
+
+About
+
+</a>
+
+<a href="contact.html">
+
+<i class="fas fa-envelope"></i>
+
+Contact
+
+</a>
+
+</div>
+
+</aside>
+
+<!-- SEARCH POPUP -->
+
+<div class="search-box"
+id="searchBox">
+
+<div class="search-card">
+
+<h2>
+
+Search Articles
+
+</h2>
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search Articles..."
-autocomplete="off"
->
+placeholder="Search news...">
 
-<button id="searchBtn">
+<button
+id="searchBtn">
 
 Search
 
@@ -85,86 +212,110 @@ Search
 
 </div>
 
-</section>
+</div>
 
-<section class="categories">
+<!-- CATEGORY BAR -->
 
-<h2>
+<div class="category-wrapper">
 
-Categories
+<div class="categories">
 
-</h2>
+<a href="news.html">News</a>
 
-<div class="category-grid">
+<a href="movies.html">Movies</a>
 
-<a href="news.html" class="category-card">
+<a href="politics.html">Politics</a>
 
-News
+<a href="history.html">History</a>
 
-</a>
+<a href="biography.html">Biography</a>
 
-<a href="history.html" class="category-card">
+<a href="ai.html">AI</a>
 
-History
+<a href="influencers.html">Influencers</a>
+</div>
 
-</a>
+</div>
 
-<a href="movies.html" class="category-card">
+<!-- HERO SECTION -->
 
-Movies
+<section class="hero-slider">
 
-</a>
-<a href="politics.html" class="category-card">
+<div id="heroPosts">
 
-Politics
+<div class="hero-slide">
 
-</a>
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
+alt="Hero News">
 
-<a href="biography.html" class="category-card">
+<div class="hero-overlay"></div>
 
-Biography
+<div class="hero-info">
 
-</a>
+<div class="hero-tag">
 
-<a href="ai.html" class="category-card">
+Breaking
 
-AI
+</div>
 
-</a>
+<h1 id="heroTitle">
 
-<a href="influencers.html" class="category-card">
+Loading Latest News...
 
-Influencers
+</h1>
+
+<p id="heroDesc">
+
+Latest updates from INDZENO.
+
+</p>
+
+<a href="#latestPosts"
+class="read-btn">
+
+Read More
 
 </a>
 
 </div>
 
-</section>
-
-<section class="breaking-section">
-
-<div class="section-header">
-
-<h2>
-
-Breaking Updates
-
-</h2>
-
 </div>
-
-<div id="breakingNews">
-
-<!-- Real Time Breaking News From Supabase -->
 
 </div>
 
 </section>
 
-<section class="latest-section">
+<!-- BREAKING NEWS -->
 
-<div class="section-header">
+<section class="breaking-bar">
+
+<div class="live-tag">
+
+LIVE
+
+</div>
+
+<div
+class="breaking-track"
+id="breakingNews">
+
+<span>
+
+Loading Breaking News...
+
+</span>
+
+</div>
+
+</section>
+
+<!-- LATEST POSTS -->
+
+<section
+class="latest-news">
+
+<div class="section-title">
 
 <h2>
 
@@ -180,37 +331,47 @@ View All
 
 </div>
 
-<div id="latestPosts">
+<div
+id="latestPosts"
+class="news-grid">
 
-<!-- Latest Posts Auto Load Here -->
+<!-- Supabase Latest Posts -->
 
 </div>
 
 </section>
 
-<section class="trending-section">
+<!-- TOP STORIES -->
 
-<div class="section-header">
+<section
+class="top-stories">
+
+<div class="section-title">
 
 <h2>
 
-Trending Now
+🔥 Top Stories
 
 </h2>
 
 </div>
 
-<div id="trendingPosts">
+<div
+id="topStories"
+class="story-grid">
 
-<!-- Trending Posts -->
+<!-- Supabase Top Stories -->
 
 </div>
 
 </section>
 
-<section class="featured-section">
+<!-- FEATURED STORIES -->
 
-<div class="section-header">
+<section
+class="featured-section">
+
+<div class="section-title">
 
 <h2>
 
@@ -220,7 +381,9 @@ Featured Stories
 
 </div>
 
-<div id="featuredPosts">
+<div
+id="featuredPosts"
+class="featured-grid">
 
 <!-- Featured Posts -->
 
@@ -228,9 +391,197 @@ Featured Stories
 
 </section>
 
-<section class="all-posts-section">
+<!-- AI SECTION -->
 
-<div class="section-header">
+<section
+class="category-block ai-block">
+
+<div class="section-title">
+
+<h2>
+
+AI News
+
+</h2>
+
+<a href="ai.html">
+
+More
+
+</a>
+
+</div>
+
+<div
+id="aiPosts"
+class="category-grid">
+
+<!-- AI POSTS -->
+
+</div>
+
+</section>
+
+<!-- POLITICS SECTION -->
+
+<section
+class="category-block politics-block">
+
+<div class="section-title">
+
+<h2>
+
+Politics
+
+</h2>
+
+<a href="politics.html">
+
+More
+
+</a>
+
+</div>
+
+<div
+id="politicsPosts"
+class="category-grid">
+
+<!-- Politics POSTS -->
+
+</div>
+
+</section>
+
+<!-- MOVIES SECTION -->
+
+<section
+class="category-block movie-block">
+
+<div class="section-title">
+
+<h2>
+
+Movies
+
+</h2>
+
+<a href="movies.html">
+
+More
+
+</a>
+
+</div>
+
+<div
+id="moviePosts"
+class="category-grid">
+
+<!-- Movie POSTS -->
+
+</div>
+
+</section>
+<!-- HISTORY SECTION -->
+
+<section
+class="category-block history-block">
+
+<div class="section-title">
+
+<h2>
+
+History
+
+</h2>
+
+<a href="history.html">
+
+More
+
+</a>
+
+</div>
+
+<div
+id="historyPosts"
+class="category-grid">
+
+<!-- History Posts -->
+
+</div>
+
+</section>
+
+<!-- BIOGRAPHY SECTION -->
+
+<section
+class="biography-block">
+
+<div class="section-title">
+
+<h2>
+
+Biography
+
+</h2>
+
+<a href="biography.html">
+
+More
+
+</a>
+
+</div>
+
+<div
+id="biographyPosts"
+class="bio-grid">
+
+<!-- Biography Posts -->
+
+</div>
+
+</section>
+
+<!-- INFLUENCERS -->
+
+<section
+class="influencer-block">
+
+<div class="section-title">
+
+<h2>
+
+Influencers
+
+</h2>
+
+<a href="influencers.html">
+
+More
+
+</a>
+
+</div>
+
+<div
+id="influencerPosts"
+class="influencer-grid">
+
+<!-- Influencer Posts -->
+
+</div>
+
+</section>
+
+<!-- ALL ARTICLES -->
+
+<section
+class="latest-news">
+
+<div class="section-title">
 
 <h2>
 
@@ -240,90 +591,129 @@ All Articles
 
 </div>
 
-<div id="allPosts">
+<div
+id="allPosts"
+class="news-grid">
 
 <!-- All Supabase Posts -->
 
 </div>
 
 </section>
+
+<!-- FOOTER -->
+
 <footer class="footer">
 
 <div class="footer-top">
 
-<div class="footer-logo">
+<h2>
 
 INDZENO
 
-</div>
-
-<div class="footer-menu">
-
-<a href="index.html">
-
-Home
-
-</a>
-
-<a href="news.html">
-
-News
-
-</a>
-
-<a href="history.html">
-
-History
-
-</a>
-
-<a href="movies.html">
-
-Movies
-
-</a>
-
-<a href="politics.html">
-
-Politics
-
-</a>
-
-<a href="biography.html">
-
-Biography
-
-</a>
-
-<a href="ai.html">
-
-AI
-
-</a>
-
-<a href="influencers.html">
-
-Influencers
-
-</a>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
+</h2>
 
 <p>
 
-© 2026 INDZENO. All Rights Reserved.
+Real Time News Portal
 
 </p>
 
 </div>
 
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="news.html">
+News
+</a>
+
+<a href="movies.html">
+Movies
+</a>
+
+<a href="politics.html">
+Politics
+</a>
+
+<a href="ai.html">
+AI
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 INDZENO. All Rights Reserved.
+
+</div>
+
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+<a href="index.html">
+
+<i class="fas fa-home"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="news.html">
+
+<i class="fas fa-newspaper"></i>
+
+<span>News</span>
+
+</a>
+
+<a href="ai.html">
+
+<i class="fas fa-robot"></i>
+
+<span>AI</span>
+
+</a>
+
+<a href="influencers.html">
+
+<i class="fas fa-star"></i>
+
+<span>Stars</span>
+
+</a>
+
+<a href="contact.html">
+
+<i class="fas fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+</nav>
+
+<!-- SUPABASE -->
+
+<script>
+
+const SUPABASE_URL =
+"https://ltknnbjsymyrpnuntwyo.supabase.co/rest/v1/";
+
+const SUPABASE_KEY =
+"sb_publishable_r2vMX1He-CTQk8yxKcGcOw__aaTWrLd";
+
+</script>
 
 <script src="js/config.js"></script>
 
